@@ -75,3 +75,8 @@ if __name__ == "__main__":
     c = Course("Test")
     c.add_student("Ali", 50)
     print(c)
+    def remove_student(self, name: str) -> None:
+        """"Remove a student, or raise Kererror if missing."""
+        if name not in self.marks:
+          raise KeyError(f"No student named {name}") 
+          del  self.marks[name]
