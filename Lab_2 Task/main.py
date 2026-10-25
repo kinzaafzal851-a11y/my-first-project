@@ -7,7 +7,7 @@ print("Student Test")
 c = Course("Programming for AI")
 
 c.add_student("Ali", 88)
-c.add_student("Sara", 92)
+c.add_student("Zara", 92)
 c.add_student("Omar", 75)
 
 # Task 2: Course test
@@ -43,3 +43,11 @@ print("Top student:", c1.top_student())
 print("\nWrong File Test")
 
 load_course("Programming for AI", "mark.txt")
+
+c = Course("X"); c.add_student("Ali",88)
+c.remove_student("Ali")
+print(len(c))
+try:
+    c.remove_student ("Zara")
+except KeyError as e:
+    print("KeyError:", e)

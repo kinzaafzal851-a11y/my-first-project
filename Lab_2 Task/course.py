@@ -5,10 +5,17 @@ class InvalidMarksError(Exception):
 
 class Course:
     """A course that stores students and their marks."""
+    
 
     def __init__(self, name):
         self.name = name
         self.marks = {}
+
+    def remove_student(self, name: str) -> None:
+                """"Remove a student, or raise Kererror if missing."""
+                if name not in self.marks:
+                  raise KeyError(f"No student named {name}") 
+                  del  self.marks[name]
 
     def add_student(self, student, marks):
         if not 0 <= marks <= 100:
@@ -73,10 +80,11 @@ def load_course(name, filename):
 
 if __name__ == "__main__":
     c = Course("Test")
-    c.add_student("Ali", 50)
+    c.add_student("Ali", 88)
     print(c)
-    def remove_student(self, name: str) -> None:
-        """"Remove a student, or raise Kererror if missing."""
-        if name not in self.marks:
-          raise KeyError(f"No student named {name}") 
-          del  self.marks[name]
+    
+def remove_student(self, name: str) -> None:
+    """ Remove a student, or raise KeyError if missing."""
+    if name not in self.marks:
+       raise KeyError(f"No student named {name}")
+    del self.marks[name]
